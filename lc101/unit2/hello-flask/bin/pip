@@ -1,0 +1,6 @@
+#!/Users/wilsonchan/miniconda3/envs/hello-flask/bin/python
+if __name__ == '__main__':
+    import sys
+    import pip
+
+    sys.exit(pip.main())
