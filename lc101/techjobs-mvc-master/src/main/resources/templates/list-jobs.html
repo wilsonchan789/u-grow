@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <!-- TODO #3 - Use the same list display from search.html -->
+
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="column : ${job}">
+            <!--#strings.capitalizeWords() to capitalize the field name-->
+            <td th:text="${#strings.capitalizeWords(column.key)}"></td>
+            <td th:if="${column.key.equals('name')}" th:text="${column.value}"></td>
+            <td th:unless="${column.key.equals('name')}">
+                <!--hyperlink the value-->
+                <a th:href="@{/search/results(searchType=${column.key},searchTerm=${column.value})}" th:text="${column.value}">
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

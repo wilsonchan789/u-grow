@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <form th:action="@{/search/results}">
+        <h2>Search by:</h2>
+
+        <p>
+            <span th:each="column : ${columns}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == 'all'}"/>
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+    </form>
+
+    <hr />
+
+
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="column : ${job}">
+            <!--#strings.capitalizeWords() to capitalize the field name-->
+            <td th:text="${#strings.capitalizeWords(column.key)}"></td>
+            <td th:if="${column.key.equals('name')}" th:text="${column.value}"></td>
+            <td th:unless="${column.key.equals('name')}">
+                <!--hyperlink the value that are not name-->
+                <a th:href="@{/search/results(searchType=${column.key},searchTerm=${column.value})}" th:text="${column.value}">
+                </a>
+            </td>
+        </tr>
+    </table>
+    <!-- TODO #2 - Loop over jobs map to display all job fields -->
+
+</div>
+
+</body>
+</html>
