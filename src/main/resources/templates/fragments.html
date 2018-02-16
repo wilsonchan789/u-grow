@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:fragment="head">
+
+    <title>U-Grow</title>
+</head>
+
+<body>
+
+<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header"></div>
+
+        <div th:if="${sessionOn} == true" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/logout}" class="navbar-brand">Logout</a></li>
+            </ul>
+        </div>
+        <div th:if="${sessionOn} == false" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a th:href="@{/login}" class="navbar-brand">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
