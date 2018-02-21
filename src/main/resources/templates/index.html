@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div>
+
+
+    <div class="container">
+
+
+        <h1>U-Grow</h1>
+        <p th:if="${sessionOn == false}"><a th:href="@{/register}">Sign up to grow plants</a></p>
+
+    </div>
+</div>
+
+</body>
+</html>
