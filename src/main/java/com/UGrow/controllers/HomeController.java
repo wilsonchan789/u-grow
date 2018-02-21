@@ -27,6 +27,7 @@ public class HomeController extends AbstractController {
         User user = getUserFromSession(request.getSession());
         String username =  user.getUsername();
         model.addAttribute("username", username);
+        model.addAttribute("sessionOn", isSessionActive(request.getSession()));
         return "home";
     }
 
