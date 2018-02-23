@@ -21,7 +21,6 @@ public class TodoController extends AbstractController {
     public String index(Model model, HttpServletRequest request) {
 
         model.addAttribute("title", "U-Grow Todo");
-        //add calander
         model.addAttribute("todo", todoDao.findAll());
         model.addAttribute("sessionOn", isSessionActive(request.getSession()));
         return "todo";
