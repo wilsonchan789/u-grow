@@ -26,17 +26,5 @@ public class TodoController extends AbstractController {
         return "todo";
     }
 
-//    Calendar date= Calendar.getInstance();
-//    ArrayList<Calendar> dates = new ArrayList<>();
-//
-//    for (int i=0; i<10; i++) {
-//        date.add(Calendar.WEEK_OF_YEAR, 4);
-//        // Create new instance of cal
-//        Calendar tmp= Calendar.getInstance();
-//        //Makes its inner values the same
-//        tmp.setTime(date.getTime());
-//        // Add unique instance to list
-//        dates.add(tmp);
-//    }
 
 }
