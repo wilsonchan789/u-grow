@@ -1,0 +1,14 @@
+body {
+	margin: 0 auto;
+	padding: 0 auto;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+button {
+	background-color: #008DD5;
+	border: none;
+	padding: .5em 3em;
+	color: #fff;
+}
+button.btn.btn-default.button1 h3 {
+
+}
