@@ -2,29 +2,35 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+     display: grid;
+     grid-template-areas: 'header header header header header'
+     '. form form form .';
+     grid-gap: 5px;
+     grid-template-rows: auto;
+     grid-template-columns: 25fr 50fr 25fr;
+     font-family: 'Source Sans Pro', sans-serif;
 }
 header {
-    display: grid;
-    grid-template-areas: 'headerLeft headerRight';
-    grid-gap: 5px;
+    grid-area: header;
+}
+.wideHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 14px;
 }
 .headerLeft {
-    grid-area: headerLeft;
+
 }
-.headerRight {
-    grid-area: headerRight;
-    align-self: center;
-    justify-self: end;
+.headerRight li {
+    display: inline-block;
 }
 .loginForm {
-    display: grid;
-    grid-template-areas: 'form'
+    grid-area: form;
     grid-gap: 5px;
 }
 .registrationForm {
-    display: grid;
-    grid-template-areas: 'form'
+    grid-area: form;
     grid-gap: 5px;
 }
 form {

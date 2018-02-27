@@ -8,18 +8,20 @@
 
 <body>
     <header th:fragment="header">
-        <div class="headerLeft">
-            <h1>U-Grow</h1>
-        </div>
-        <div class="headerRight" th:if="${sessionOn} == true">
-            <ul>
-                <li><a th:href="@{/logout}">Logout</a></li>
-            </ul>
-        </div>
-        <div class="headerRight" th:if="${sessionOn} == false">
-            <ul>
-                <li><a th:href="@{/login}">Login</a></li>
-            </ul>
+        <div class="wideHeader">
+            <div class="headerLeft">
+                <h1>U-Grow</h1>
+            </div>
+            <div class="headerRight" th:if="${sessionOn} == true">
+                <ul>
+                    <li><a th:href="@{/logout}">Logout</a></li>
+                </ul>
+            </div>
+            <div class="headerRight" th:if="${sessionOn} == false">
+                <ul>
+                    <li><a th:href="@{/login}">Login</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 </body>
