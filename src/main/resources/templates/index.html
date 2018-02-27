@@ -4,16 +4,16 @@
 </head>
 <body>
 
-<div th:replace="fragments :: page-header"></div>
+<div th:replace="fragments :: page"></div>
 
-<header>
+<div>
     <div>
 
         <h1>U-Grow</h1>
         <p th:if="${sessionOn == false}"><a th:href="@{/register}">Sign up to grow plants</a></p>
 
     </div>
-</header>
+</div>
 
 </body>
 </html>

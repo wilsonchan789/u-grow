@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-<div th:replace="fragments :: page-header"></div>
-<div class="container body-content">
-
-    <h1 th:text="${title}">Default Title</h1>
-
+<div th:replace="fragments :: page"></div>
+<div th:replace="fragments :: header"></div>
+<div class="registrationForm">
     <form method="post" style="max-width:600px;" th:object="${registerForm}">
+        <h1 th:text="${title}">Default Title</h1>
         <div class="form-group">
             <label th:for="username">Username</label>
             <textarea th:field="*{username}"></textarea>
@@ -28,9 +26,6 @@
         </div>
 
         <button type="submit" value="Add"><h3>Add</h3></button>
-
     </form>
-
 </div>
-</body>
 </html>

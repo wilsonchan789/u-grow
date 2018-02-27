@@ -1,7 +1,34 @@
+* {
+    box-sizing: border-box;
+}
 body {
-	margin: 0 auto;
-	padding: 0 auto;
-	font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+header {
+    display: grid;
+    grid-template-areas: 'headerLeft headerRight';
+    grid-gap: 5px;
+}
+.headerLeft {
+    grid-area: headerLeft;
+}
+.headerRight {
+    grid-area: headerRight;
+    align-self: center;
+    justify-self: end;
+}
+.loginForm {
+    display: grid;
+    grid-template-areas: 'form'
+    grid-gap: 5px;
+}
+.registrationForm {
+    display: grid;
+    grid-template-areas: 'form'
+    grid-gap: 5px;
+}
+form {
+    grid-area: form;
 }
 button {
 	background-color: #008DD5;
