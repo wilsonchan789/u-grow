@@ -5,22 +5,22 @@
 <div th:replace="fragments :: header"></div>
 <div class="registrationForm">
     <form method="post" style="max-width:600px;" th:object="${registerForm}">
-        <h1 th:text="${title}">Default Title</h1>
+        <h2 th:text="${title}"></h2>
         <div class="form-group">
-            <label th:for="username">Username</label>
+            <label th:for="username"><h3>Username</h3></label>
             <textarea th:field="*{username}"></textarea>
             <p th:errors="*{username}" class="error"></p>
             <p th:text="${existingUsername}" class="error"></p>
         </div>
 
         <div class="form-group">
-            <label th:for="password">Password</label>
+            <label th:for="password"><h3>Password</h3></label>
             <textarea th:field="*{password}" type="password"></textarea>
             <p th:errors="*{password}" class="error"></p>
         </div>
 
         <div class="form-group">
-            <label th:for="verifyPassword">Verify Password</label>
+            <label th:for="verifyPassword"><h3>Verify Password</h3></label>
             <textarea th:field="*{verifyPassword}" type="password"></textarea>
             <div class="error" th:text="${verifyError}"></div>
         </div>
