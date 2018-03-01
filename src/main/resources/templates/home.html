@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div>
+    <h1>Welcome Home <span th:text="${username}"></span>.</h1>
+</div>
+<div class="row">
+    <div class ="col-md-3 tried-section">
+        <section class="sidebar">
+            <h2>Todo?</h2>
+            <p>You have nothing planted so nothing todo</p>
+            <table class="table" style="max-width: 400px">
+                <tr>
+                    <th>Plant name | </th>
+                    <th>Plant Description | </th>
+                    <th>Something else |</th>
+                </tr>
+            </table>
+        </section>
+    </div>
+    <div>
+        <h2>Calendar or Map?</h2>
+    </div>
+    <div id='calendar'></div>
+</div>
+
+</body>
+</html>

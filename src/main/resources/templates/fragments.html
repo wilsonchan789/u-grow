@@ -3,7 +3,35 @@
 
 <head th:fragment="head">
     <title>U-Grow</title>
+    <link rel='stylesheet' href='css/fullcalendar.css'/>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/moment.min.js'></script>
+    <script src='js/fullcalendar.js'></script>
+    <script>$(document).ready(function() {
+
+        // page is now ready, initialize the calendar...
+
+        $('#calendar').fullCalendar({
+            // put your options and callbacks here
+            events: [
+                {
+                    title: 'Event1',
+                    start: '2018-02-22'
+                },
+                {
+                    title: 'Event2',
+                    start: '2018-02-24'
+                }
+                // etc...
+            ],
+            color: 'yellow',   // an option!
+            textColor: 'black' // an option!
+        })
+
+    });</script>
+
     <link rel="stylesheet" href="../../css/styles.css" />
+
 </head>
 
 <body>
