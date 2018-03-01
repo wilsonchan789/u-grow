@@ -22,6 +22,7 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
         List<String> authPages = Arrays.asList("/home");//Todo add the pages that are allowed
 
+
         // Require sign-in for auth pages
         if (authPages.contains(request.getRequestURI()) ) {
 

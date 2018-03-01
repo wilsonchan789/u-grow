@@ -14,12 +14,12 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HomeController extends AbstractController {
 
-    @RequestMapping(value = "/index")
+    @RequestMapping(value = "/")
     public String index(Model model, HttpServletRequest request) {
 
         model.addAttribute("title", "U-Grow");
         model.addAttribute("sessionOn", isSessionActive(request.getSession()));
-        return "index";
+        return "/login";
     }
     @RequestMapping(value= "/home")
     public String displayHome(Model model, HttpServletRequest request) {
