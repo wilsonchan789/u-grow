@@ -6,6 +6,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -42,6 +43,10 @@ public class User {
         this.pwHash = pwHash;
     }
 
+    @OneToMany
+    @JoinColumn(name = "author_id")
+    private List<Todo> todos;
+
     @NotNull
     @Column(name = "username", unique = true)
     public String getUsername() {
@@ -67,5 +72,13 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<Todo> todos) {
+        this.todos = todos;
     }
 }
