@@ -51,7 +51,6 @@ public class TodoController extends AbstractController {
         todo.setAuthor(getUserFromSession(request.getSession()));
         todoDao.save(todo);
         return "redirect:/todo/?id=" + todo.getId();
-
     }
 
 }
