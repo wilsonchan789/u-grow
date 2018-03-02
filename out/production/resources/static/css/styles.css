@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+body {
+     display: grid;
+     grid-template-areas: 'header header header header header'
+     'form form form form form';
+     grid-gap: 5px;
+     grid-template-rows: auto;
+     grid-template-columns: 10fr 80fr 10fr;
+     font-family: 'Source Sans Pro', sans-serif;
+}
+header {
+    grid-area: header;
+}
+.wideHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 14px;
+}
+.headerLeft {
+
+}
+.headerRight li {
+    display: inline-block;
+}
+.loginForm {
+    grid-area: form;
+    grid-gap: 5px;
+    justify-self: center;
+}
+.registrationForm {
+    grid-area: form;
+    grid-gap: 5px;
+    justify-self: center;
+}
+form {
+    grid-area: form;
+}
+button {
+	background-color: #008DD5;
+	border: none;
+	padding: .5em 3em;
+	color: #fff;
+}
+button.btn.btn-default.button1 h3 {
+
+}

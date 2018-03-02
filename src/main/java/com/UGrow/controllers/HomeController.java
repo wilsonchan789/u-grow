@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,11 +16,11 @@ import javax.servlet.http.HttpSession;
 public class HomeController extends AbstractController {
 
     @RequestMapping(value = "/")
-    public String index(Model model, HttpServletRequest request) {
+    public RedirectView index(Model model, HttpServletRequest request) {
 
         model.addAttribute("title", "U-Grow");
         model.addAttribute("sessionOn", isSessionActive(request.getSession()));
-        return "/login";
+        return new RedirectView("home");
     }
     @RequestMapping(value= "/home")
     public String displayHome(Model model, HttpServletRequest request) {
