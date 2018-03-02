@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Todo {
@@ -16,7 +16,11 @@ public class Todo {
     private String name;
 
     @NotNull
-    private ArrayList<String> description;
+    private String step;
+
+    @NotNull
+    @Size(min=1)
+    private String imageUrl;
 
     @ManyToOne
     private User author;
@@ -25,9 +29,10 @@ public class Todo {
 
     }
 
-    public Todo(String name, ArrayList<String> description) {
+    public Todo(String name, String step, String imageUrl) {
         this.name = name;
-        this.description = description;
+        this.step = step;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -46,19 +51,27 @@ public class Todo {
         this.id = id;
     }
 
-    public ArrayList<String> getDescription() {
-        return description;
-    }
-
-    public void setDescription(ArrayList<String> description) {
-        this.description = description;
-    }
-
     public User getAuthor() {
         return author;
     }
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getStep() {
+        return step;
+    }
+
+    public void setStep(String step) {
+        this.step = step;
     }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <div th:unless="${todos} and ${todos.size()}">
+        <h2>No Results</h2>
+    </div>
+
+    <div th:fragment="todos-list">
+        <div th:if="${todos}">
+
+            <h3 th:text="${todos.size() + ' Result(s)'}"></h3>
+
+            <div th:each="todo : ${todos}">
+                <table  th:fragment="single-todo" class="todo-listing">
+                    <tr>
+                        <td><img class="todo-detail-img" th:src="${todo.imageUrl}" /></td>
+                        <td>
+                            <p class="todo-title" th:text="${#strings.capitalizeWords(todo.name)}" />
+                            <span>By: </span><a th:text="${todo.author.username}" th:href="@{/user?id=} + ${todo.author.id}"></a>
+                            <br />
+                            <a th:if="${isAuthor}" th:href="@{/todo/edit/} + ${todo.id}" >
+                                <button>Edit Todo</button>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Steps</th>
+
+                        <td>
+                            <li th:each="step : ${#strings.arraySplit(todo.step, '&#10;')}">
+                                <label th:for="${step}" th:text="${step}"></label>
+                            </li>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
