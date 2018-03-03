@@ -20,27 +20,30 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
-        List<String> authPages = Arrays.asList("/home");//Todo add the pages that are allowed
+        List<String> authPages = Arrays.asList("/home");
 
+        // Require sign-in for auth pages
+        if ( authPages.contains(request.getRequestURI()) ) {
 
-        boolean isLoggedIn = false;
-        User user;
-        Integer userId = (Integer) request.getSession().getAttribute(AbstractController.userSessionKey);
+            boolean isLoggedIn = false;
+            User user;
+            Integer userId = (Integer) request.getSession().getAttribute(AbstractController.userSessionKey);
 
-        if (userId != null) {
-            user = userDao.findOne(userId);
+            if (userId != null) {
+                user = userDao.findOne(userId);
 
-            if (user != null) {
-                isLoggedIn = true;
+                if (user != null) {
+                    isLoggedIn = true;
+                }
+            }
+
+            // If user not logged in, redirect to login page
+            if (!isLoggedIn) {
+                response.sendRedirect("/login");
+                return false;
             }
         }
 
-        // If user not logged in, redirect to login page
-        if (!isLoggedIn) {
-            // Require sign-in for auth pages
-                response.sendRedirect("/login");
-                return false;
-        }
         return true;
     }
 
