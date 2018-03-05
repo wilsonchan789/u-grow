@@ -3,10 +3,11 @@
 }
 body {
      display: grid;
-     grid-template-areas: 'header header header header header';
+     grid-template-columns: 30% 70%;
+     grid-template-areas: 'header header'
+     'section article';
      grid-gap: 5px;
      grid-template-rows: auto;
-     grid-template-columns: 10fr 80fr 10fr;
      font-family: 'Source Sans Pro', sans-serif;
 }
 header {
@@ -29,6 +30,9 @@ header {
     justify-content: space-between;
     margin: auto 14px;
 }
+.logo {
+    color: white;
+}
 .headerRight li, .headerLeft li {
     grid-area: header;
     display: inline-block;
@@ -45,6 +49,9 @@ header {
 form {
     grid-area: header;
     background-color: white;
+}
+article {
+    grid-area: article;
 }
 button {
 	background-color: #008DD5;
