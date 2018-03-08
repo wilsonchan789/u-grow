@@ -24,6 +24,10 @@ public class User {
     private String pwHash;
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
+    @OneToMany
+    @JoinColumn(name = "author_id")
+    private List<Todo> todos;
+
     public User() {
     }
 
@@ -42,10 +46,6 @@ public class User {
     private void setPwHash(String pwHash) {
         this.pwHash = pwHash;
     }
-
-    @OneToMany
-    @JoinColumn(name = "author_id")
-    private List<Todo> todos;
 
     @NotNull
     @Column(name = "username", unique = true)

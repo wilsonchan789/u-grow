@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1>
+        <span th:text="${#strings.capitalizeWords(title)}"></span>
+        <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+    </h1>
+
+    <form method="post" style="max-width:600px;" th:object="${todo}">
+        <div class="form-group">
+            <label th:for="name">Name</label>
+            <input class="form-control" th:field="*{name}" />
+            <span th:errors="*{name}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="step">Steps (add each steps on a separate line)</label>
+            <textarea class="form-control" height="50" rows="5" th:field="*{step}" />
+            <span th:errors="*{step}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="imageUrl">Image URL</label>
+            <input class="form-control" th:field="*{imageUrl}" />
+            <span th:errors="*{imageUrl}" class="error"></span>
+        </div>
+
+        <input type="submit" value="Add Todo" />
+    </form>
+
+</div>
+
+</body>
+</html>
