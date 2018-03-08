@@ -27,14 +27,14 @@ public class Todo {
     @ManyToOne
     private User author;
 
-    public Todo() {
-
-    }
-
     public Todo(String name, String step, String imageUrl) {
         this.name = name;
         this.step = step;
         this.imageUrl = imageUrl;
+    }
+
+    public Todo() {
+
     }
 
     public String getName() {
