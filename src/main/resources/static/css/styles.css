@@ -138,3 +138,6 @@ input[type=submit]:active {
 article {
     grid-area: article;
 }
+#tomatoesLink, #potatoesLink {
+    cursor: pointer;
+}
