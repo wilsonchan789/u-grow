@@ -2,9 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments/head :: head"></head>
 <body>
-
-<div th:replace="fragments :: header"></div>
-<div>
 <header class="wideHeader">
     <div class="headerLeft">
         <h1>U-Grow</h1>
@@ -23,23 +20,22 @@
 </header>
 
 <section>
-    <h1>Welcome Home <span th:text="${username}"></span>.</h1>
+    <h2>Welcome <span th:text="${username}"></span>!</h2>
     <div class ="tried-section">
         <section class="sidebar">
-            <h2>Todo?</h2>
-            <p>You have nothing planted so nothing todo</p>
-            <table class="table" style="max-width: 4">
-                <tr>
-                    <th>Plant name | </th>
-                    <th>Plant Description | </th>
-                    <th>Something else |</th>
-                </tr>
-            </table>
+            <h2>What would you like to plant today?</h2>
+                <ul>
+                    <li id="tomatoesLink">Tomatoes</li>
+                    <li id="potatoesLink">Potatoes</li>
+                </ul>
         </section>
+    </div>
+    <div>
+        <h2>Guides</h2>
     </div>
 </section>
 <article>
-    <h2>Calendar or Map?</h2>
+    <h2>Calendar</h2>
     <div id='calendar'></div>
 </article>
 </div>
