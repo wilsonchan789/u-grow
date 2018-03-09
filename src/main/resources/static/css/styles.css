@@ -141,3 +141,11 @@ article {
 #tomatoesLink, #potatoesLink {
     cursor: pointer;
 }
+
+.error {
+    color: red;
+}
+
+.todo-detail-img {
+    width: 200px;
+}

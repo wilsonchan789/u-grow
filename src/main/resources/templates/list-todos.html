@@ -25,7 +25,7 @@
                         <td><img class="todo-detail-img" th:src="${todo.imageUrl}" /></td>
                         <td>
                             <p class="todo-title" th:text="${#strings.capitalizeWords(todo.name)}" />
-                            <span>By: </span><a th:text="${todo.author.username}" th:href="@{/user?id=} + ${todo.author.id}"></a>
+                            <span>By: </span><a th:text="${todo.author.username}"></a>
                             <br />
                             <a th:if="${isAuthor}" th:href="@{/todo/edit/} + ${todo.id}" >
                                 <button>Edit Todo</button>
