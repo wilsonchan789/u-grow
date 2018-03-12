@@ -45,3 +45,11 @@ $(document).ready(function() {
          console.log('The potatoes id was clicked!');
          });
 });
+
+function showTable(id) {
+    var e = document.getElementById(id);
+    if (e.style.display == 'block')
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+}

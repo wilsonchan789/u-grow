@@ -20,7 +20,7 @@
             <h3 th:text="${todos.size() + ' Result(s)'}"></h3>
 
             <div th:each="todo : ${todos}">
-                <table  th:fragment="single-todo" class="todo-listing">
+                <table th:fragment="single-todo" class="todo-listing">
                     <tr>
                         <td><img class="todo-detail-img" th:src="${todo.imageUrl}" /></td>
                         <td>

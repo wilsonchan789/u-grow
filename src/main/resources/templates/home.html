@@ -25,15 +25,15 @@
         <section class="sidebar">
             <h2>What would you like to plant today?</h2>
                 <ul>
-                    <li id="tomatoesLink">Tomatoes</li>
-                    <li id="potatoesLink">Potatoes</li>
+                    <li th:each="plant : ${plants}" th:href="@{?id=} + ${plant.id}" th:text="${#strings.capitalizeWords(plant.name)}" class="Link" value="Show Table" onclick="showTable()"></li>
                 </ul>
         </section>
     </div>
     <div>
         <h2>Guides</h2>
-        <table th:replace="list-todos :: single-todo">
-        </table>
+
+        <!--<table id="todoTable" th:replace="list-todos :: single-todo">
+        </table>-->
     </div>
 </section>
 <article>
