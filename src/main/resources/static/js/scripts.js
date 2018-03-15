@@ -1,47 +1,43 @@
 $(document).ready(function() {
+
     // page is now ready, initialize the calendar...
         // put your options and callbacks here
+            $('#calendar').fullCalendar({
+                selectable: true,
+                events: [
+                                      {
+                                          title: 'Potatoes 1',
+                                          start: '2018-03-01',
+                                          plant: '1'
+                                      },
+                                      {
+                                          title: 'Tomatoes 2',
+                                          start: '2018-03-02',
+                                          plant: '2'
+                                      },
+                                      {
+                                          title: 'Potatoes 1',
+                                          start: '2018-03-03',
+                                          plant: '1'
+                                      },
+                                      {
+                                          title: 'Tomatoes 2',
+                                          start: '2018-03-04',
+                                          plant: '2'
+                                      }
+                                  ],
+                header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,listWeek'
+                },
+                eventRender: function eventRender( event, element, view ) {
+                                     return ['all', event.plant].indexOf($('#plant_selector').val()) >= 0
+                                 }
+            });
+            $('#plant_selector').on('change',function(){
+                $('#calendar').fullCalendar('rerenderEvents');
+            })
 
-         $("#tomatoesLink").click(function () {
-             $('#calendar').fullCalendar({
-               events: [
-                  {
-                    title  : 'water',
-                    start  : '2018-03-01'
-                  },
-                  {
-                      title  : 'feed',
-                      start  : '2018-03-05',
-                      end    : '2018-03-07'
-                  },
-                  {
-                      title  : 'water',
-                      start  : '2018-03-09T12:30:00',
-                      allDay : false // will make the time show
-                  }
-               ]
-             });
-         console.log('The tomatoes id was clicked!');
-         });
-         $("#potatoesLink").click(function () {
-               $('#calendar').fullCalendar({
-               events: [
-                    {
-                      title  : 'feed',
-                      start  : '2018-03-03'
-                    },
-                    {
-                    title  : 'water',
-                    start  : '2018-03-08',
-                    end    : '2018-03-09'
-                    },
-                    {
-                    title  : 'feed',
-                    start  : '2018-03-11T12:30:00',
-                    allDay : false // will make the time show
-                    }
-               ]
-             });
-         console.log('The potatoes id was clicked!');
-         });
 });
+

@@ -15,21 +15,22 @@
 
 <section>
     <h2>Welcome <span th:text="${username}"></span>!</h2>
-    <div class ="tried-section">
-        <section class="sidebar">
-            <h2>What would you like to plant today?</h2>
-                <ul>
-                    <li id="tomatoesLink">Tomatoes</li>
-                    <li id="potatoesLink">Potatoes</li>
-                </ul>
-        </section>
-    </div>
+
+
+    <select id="plant_selector">
+        <option value="All">All</option>
+        <option value="1">Plant 1</option>
+        <option value="2">Plant 2</option>
+    </select>
+
+
     <div>
         <h2>Guides</h2>
     </div>
 </section>
 <article>
     <h2>Calendar</h2>
+    <div id="loading"></div>
     <div id='calendar'></div>
 </article>
 </body>
