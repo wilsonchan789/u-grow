@@ -166,3 +166,16 @@ article {
 #tomatoesLink, #potatoesLink {
     cursor: pointer;
 }
+
+.error {
+    color: red;
+}
+
+container body-content {
+    text-align: center;
+}
+
+a:linkadd {
+    color: black;
+
+}
