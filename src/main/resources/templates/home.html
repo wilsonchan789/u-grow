@@ -16,11 +16,11 @@
 <section>
     <h2>Welcome <span th:text="${username}"></span>!</h2>
 
-
+    <h2>What would you like to plant?</h2>
     <select id="plant_selector">
-        <option value="All">All</option>
-        <option value="1">Plant 1</option>
-        <option value="2">Plant 2</option>
+        <option value="none"></option>
+        <option value="1">Potatoes</option>
+        <option value="2">Tomatoes</option>
     </select>
 
 
@@ -30,7 +30,6 @@
 </section>
 <article>
     <h2>Calendar</h2>
-    <div id="loading"></div>
     <div id='calendar'></div>
 </article>
 </body>

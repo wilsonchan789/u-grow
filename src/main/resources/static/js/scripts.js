@@ -6,22 +6,22 @@ $(document).ready(function() {
                 selectable: true,
                 events: [
                                       {
-                                          title: 'Potatoes 1',
+                                          title: 'Potatoes',
                                           start: '2018-03-01',
                                           plant: '1'
                                       },
                                       {
-                                          title: 'Tomatoes 2',
+                                          title: 'Tomatoes',
                                           start: '2018-03-02',
                                           plant: '2'
                                       },
                                       {
-                                          title: 'Potatoes 1',
+                                          title: 'Potatoes',
                                           start: '2018-03-03',
                                           plant: '1'
                                       },
                                       {
-                                          title: 'Tomatoes 2',
+                                          title: 'Tomatoes',
                                           start: '2018-03-04',
                                           plant: '2'
                                       }
