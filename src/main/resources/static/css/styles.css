@@ -171,14 +171,18 @@ article {
     color: red;
 }
 
-form {
-    text-align: top;
-}
-
 #todoadd {
     color: black;
 }
 
 .todo-detail-img {
     width: 200px;
+}
+
+.todoform {
+    margin-top: 50mm;
+}
+
+h1 {
+    text-align: center;
 }

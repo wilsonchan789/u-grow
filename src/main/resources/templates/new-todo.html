@@ -13,7 +13,7 @@
         <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
     </h1>
 
-    <form method="post" style="max-width:600px;" th:object="${todo}">
+    <form class="todoform" method="post" style="max-width:600px;" th:object="${todo}">
         <div class="form-group">
             <label th:for="name">Name</label>
             <input class="form-control" th:field="*{name}" />
