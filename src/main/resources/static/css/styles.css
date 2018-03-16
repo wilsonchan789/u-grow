@@ -178,4 +178,7 @@ container body-content {
 a:linkadd {
     color: black;
 
+.todo-detail-img {
+    width: 200px;
+
 }

@@ -23,10 +23,11 @@ public class TodoController extends AbstractController {
     private TodoDao todoDao;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String index(Model model, HttpServletRequest request) {
+    public String index(Model model, int id, HttpServletRequest request) {
 
+        Todo todo = todoDao.findOne(id);
         model.addAttribute("title", "U-Grow Todo");
-        model.addAttribute("todo", todoDao.findAll());
+        model.addAttribute("todo", todo);
         model.addAttribute("sessionOn", isSessionActive(request.getSession()));
         return "todo-detail";
     }
