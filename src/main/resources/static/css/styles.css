@@ -171,14 +171,14 @@ article {
     color: red;
 }
 
-container body-content {
-    text-align: center;
+form {
+    text-align: top;
 }
 
-a:linkadd {
+#todoadd {
     color: black;
+}
 
 .todo-detail-img {
     width: 200px;
-
 }
