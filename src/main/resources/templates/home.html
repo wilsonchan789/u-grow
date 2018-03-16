@@ -8,30 +8,25 @@
     </div>
     <div class="headerRight" th:if="${sessionOn} == true">
         <ul>
-            <li><a th:href="@{/logout}">Logout</a></li>
-        </ul>
-    </div>
-    <div class="headerRight" th:if="${sessionOn} == false">
-        <ul>
-            <li><a th:href="@{/login}">Login</a></li>
-            <li><a th:href="@{/register}">Register</a></li>
+            <li><a class="homepageLogoutLink" th:href="@{/logout}">Logout</a></li>
         </ul>
     </div>
 </header>
 
 <section>
     <h2>Welcome <span th:text="${username}"></span>!</h2>
-    <div class ="tried-section">
-        <section class="sidebar">
-            <h2>What would you like to plant today?</h2>
-                <ul>
-                    <li id="tomatoesLink">Tomatoes</li>
-                    <li id="potatoesLink">Potatoes</li>
-                </ul>
-        </section>
-    </div>
+
+    <h2>What would you like to plant?</h2>
+    <select id="plant_selector">
+        <option value="none"></option>
+        <option value="1">Potatoes</option>
+        <option value="2">Tomatoes</option>
+    </select>
+
+
     <div>
         <h2>Guides</h2>
+        <h2><a id="linkadd" th:href="@{/todo/add}">Add Todo</a></h2>
     </div>
 </section>
 <article>

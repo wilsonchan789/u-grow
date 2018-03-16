@@ -10,6 +10,22 @@ body {
      grid-template-rows: auto;
      font-family: 'Source Sans Pro', sans-serif;
 }
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    color: #fff;
+}
+a:hover {
+    text-decoration: none;
+    text-shadow: 0 0 12px #999;
+}
+a:active {
+    text-decoration: underline;
+}
+a.homepageLogoutLink {
+    color: black;
+}
 header {
     grid-area: header;
 }
@@ -23,6 +39,14 @@ header {
   	-o-background-size: cover;
   	background-size: cover;
   	background-position: center;
+}
+.subtext {
+    color: #fff;
+    padding: 1em;
+    line-height: 1.5;
+}
+.subtext > p {
+    font-weight: 18px;
 }
 .wideHeader {
     display: flex;
@@ -47,9 +71,10 @@ header {
     justify-content: space-around;
 }
 form {
-    grid-area: header;
+    position: relative;
+    bottom: 9em;
+    left:18em;
     background-color: white;
-    margin: 0 auto;
     border-radius: 3px;
     border: 1px solid #ccc;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
@@ -146,6 +171,14 @@ article {
     color: red;
 }
 
+container body-content {
+    text-align: center;
+}
+
+a:linkadd {
+    color: black;
+
 .todo-detail-img {
     width: 200px;
+
 }
